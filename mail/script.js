@@ -7,8 +7,21 @@ const emailList = ["franco@gmail.com", "marco@gmail.com", "giorgio@gmail.com", "
 
 const mail = prompt("Qual'è la tua mail?", 'franco@gmail.com');
 
-if(emailList.includes(mail)){
-    console.log('Benvenuto!')
-} else {
-    console.log('Spiacenti!')
+let isAllowed = false;
+
+for (i = 0; i < emailList.length; i++){
+    console.log(emailList[i])
+
+    if (mail === emailList[i]){
+        isAllowed = true;
+    }
 }
+
+let message = 'Mi spiace non sei autorizzato ad entrare'
+
+if (isAllowed){
+    message = 'Accesso autorizzato'
+}
+
+console.log(message);
+
